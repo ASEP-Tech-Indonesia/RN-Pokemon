@@ -1,12 +1,12 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { ThemeProvider } from "styled-components";
+import theme from "./src/global/styles/theme";
+import { Welcome } from "./src/pages/Welcome";
 
-const App = () => {
+export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <ThemeProvider theme={theme}>
+      <Welcome />
+    </ThemeProvider>
   );
-};
-
-export default App;
+}
