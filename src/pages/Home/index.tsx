@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FlatList } from "react-native";
 
+import { CardAnimation } from "../../components/CardAnimated";
 import { Card } from "../../components/Card";
+
 import api from "../../service/api";
 
 import * as S from "./styles";
@@ -58,12 +60,10 @@ export function Home() {
 
   return (
     <S.Container>
-      <FlatList 
+      <FlatList
         data={pokemons}
-        keyExtractor={pokemon => pokemon.id.toString()}
-        renderItem={({item: pokemon}) => (
-          <Card data={pokemon}/>
-        )}
+        keyExtractor={(pokemon) => pokemon.id.toString()}
+        renderItem={({ item: pokemon }) => <Card data={pokemon} />}
       />
     </S.Container>
   );
